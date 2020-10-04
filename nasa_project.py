@@ -20,11 +20,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 ln = LinearRegression()
 ln.fit(X_train, y_train)
 pred = ln.predict(X_test)
-print("The next latitudes: ", pred)
+print("\nThe next latitudes: ", pred)
 
 #Mean squared error
 RMSE = np.sqrt(metrics.mean_squared_error(y_test, pred))
-print("The error in Latitude is: ", RMSE)
+print("\n\nThe error in Latitude is: ", RMSE)
 
 #data training for LONGITUDE
 X1 = df1.drop('longitude', 1)
@@ -38,7 +38,7 @@ ln1.fit(X_train, y_train)
 
 #prediction of next longitudes
 pred1 = ln1.predict(X_test)
-print("\nThe next longitude ar: ", pred1)
+print("\n\nThe next longitude is: ", pred1)
 
 #Mean squared error
 RMSE = np.sqrt(metrics.mean_squared_error(y_test, pred1))
@@ -49,4 +49,4 @@ plt.plot([y], [y1], 'bo')
 plt.plot([pred], [pred1], 'ro')
 plt.xlabel('longitude')
 plt.ylabel('latitude')
-plt.title('Gráfico da Localização da Predição das Chamas')
+plt.title('Graph: Localization of Predicted fire')
